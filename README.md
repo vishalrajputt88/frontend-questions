@@ -448,6 +448,16 @@ console.log(increment()); // 2
                         <button class="demo-button" onclick="demonstrateSecurity()">Test XSS Protection</button>
                         <div class="demo-output" id="securityOutput">Enter text above to see how we safely handle user input</div>
                     </div>
+
+                      <div class="interactive-demo">
+                        <p><strong>data-block-id="{{ block_id }}"
+     data-block-type="{{ block_type }}"</strong></p>
+                        <input type="text" id="userInput" placeholder="Enter some text..." style="width: 100%; padding: 0.5rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 5px;">
+                        <button class="demo-button" onclick="demonstrateSecurity()">{% render 'group', children: children, settings: block.settings, shopify_attributes: block.shopify_attributes block_id: block.id,</button>
+                        <div class="demo-output" id="securityOutput">Enter text above to see how we safely handle user input</div>
+                    </div>
+
+                    
                 </div>
             </div>
         </div>
